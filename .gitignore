@@ -7,9 +7,5 @@ Saved/
 .vsconfig
 *.sln
 
-#dont ignore empty directories
-!docs/
-!raw/
-
 #ignore backup files which drawio generates
 *.bkp
