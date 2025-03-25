@@ -80,6 +80,12 @@ void AFGPlayerCharacter::OnEndCrouch(float HalfHeightAdjust, float ScaleHalfHeig
 
 bool AFGPlayerCharacter::CanJumpInternal_Implementation() const
 {
+	// ≈сли мы сейчас в прис€де, то нужно узнать есть ли у нас место чтобы встать
+	if (bIsCrouched)
+	{
+		// »щем место
+	}
+	
 	return bIsCrouched || Super::CanJumpInternal_Implementation();
 }
 

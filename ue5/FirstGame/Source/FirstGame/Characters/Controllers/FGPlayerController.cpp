@@ -25,6 +25,8 @@ void AFGPlayerController::SetupInputComponent()
 
 	InputComponent->BindAction("Crouch", EInputEvent::IE_Pressed, this, &AFGPlayerController::ChangeCrouchState);
 	InputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &AFGPlayerController::Jump);
+	InputComponent->BindAction("Sprint", EInputEvent::IE_Pressed, this, &AFGPlayerController::StartSprint);
+	InputComponent->BindAction("Sprint", EInputEvent::IE_Released, this, &AFGPlayerController::StopSprint);
 }
 
 void AFGPlayerController::MoveForward(float Value)
@@ -88,5 +90,21 @@ void AFGPlayerController::Jump()
 	if (CachedBaseCharacter.IsValid())
 	{
 		CachedBaseCharacter->Jump();
+	}
+}
+
+void AFGPlayerController::StartSprint()
+{
+	if (CachedBaseCharacter.IsValid())
+	{
+		CachedBaseCharacter->StartSprint();
+	}
+}
+
+void AFGPlayerController::StopSprint()
+{
+	if (CachedBaseCharacter.IsValid())
+	{
+		CachedBaseCharacter->StopSprint();
 	}
 }

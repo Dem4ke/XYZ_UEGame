@@ -28,6 +28,8 @@ private:
 	void LookUpAtRate(float Value);
 	void ChangeCrouchState();
 	void Jump();
+	void StartSprint();
+	void StopSprint();
 
 private:
 	TSoftObjectPtr<AFGBaseCharacter> CachedBaseCharacter; // Pointer to the base character
